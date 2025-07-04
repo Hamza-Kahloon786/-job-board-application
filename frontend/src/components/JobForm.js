@@ -12,7 +12,8 @@ function JobForm({ job, onClose, onSubmit, isEditing = false }) {
     tags: '',
     salary_range: '',
     source_url: ''
-  });
+  }); 
+  // okay //
   
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [error, setError] = useState('');
