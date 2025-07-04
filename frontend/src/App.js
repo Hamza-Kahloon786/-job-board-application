@@ -1,8 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { jobAPI } from './services/api';
-import FilterControls from './components/FilterControls';
-import JobList from './components/JobList';
-import JobForm from './components/JobForm';
 import './App.css';
 
 function App() {
@@ -24,6 +21,11 @@ function App() {
     setNotification({ message, type });
     setTimeout(() => setNotification(null), 5000);
   };
+
+  // Fix the useEffect dependency
+useEffect(() => {
+  filterJobs();
+}, [jobs, filters, filterJobs]); 
 
   // Load jobs when component mounts
   useEffect(() => {
